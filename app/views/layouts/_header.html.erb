@@ -1,0 +1,30 @@
+ <nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><%= t('app.name') %></a>
+    </div>
+  </div>
+
+  <ul class="nav navbar-nav">
+    <li><%= link_to t('home'), "/" %></li>
+    <li><%= link_to GradeLevel.model_name.human(count: 2), grade_levels_path %></li>
+    <li><%= link_to Grade.model_name.human(count: 2), grades_path %></li>
+    <li><%= link_to Subject.model_name.human(count: 2), subjects_path %></li>
+    <li><%= link_to User.model_name.human(count: 2), users_path %></li>
+    <li><%= link_to Student.model_name.human(count: 2), students_path %></li>
+    <li><%= link_to Teacher.model_name.human(count: 2), teachers_path %></li>
+    <li><%= link_to Parent.model_name.human(count: 2), parents_path %></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <% if I18n.locale == :ru %>
+      <li>
+        <a href="//en.lvh.me:3000"><%= I18n.available_locales.first %></a>
+      </li>
+    <% else %>
+      <li>
+        <a href="//ru.lvh.me:3000"><%= I18n.available_locales.last %></a>
+      </li>
+    <% end %>
+
+  </ul>
+</nav>

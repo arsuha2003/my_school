@@ -1,0 +1,41 @@
+<%= form_with model: @teacher, local: true do |form| %>
+
+  <% if @teacher.errors.any? %>
+    <div id='error_explanation'>
+      <h2>
+        <%= pluralize(@teacher.errors.count, 'error') %> prohibited
+        this teacher from being saved:
+      </h2>
+      <ul>
+        <% @teacher.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class = 'form-group'>
+    <%= form.label :teacher_id %><br>
+    <%= collection_select(:teacher, :user_id, User.all, :id, :full_name, {}, { class: 'form-control'}) %>
+  </div>
+
+  <div class = 'form-group'>
+    <%= form.label :subject_ids %><br>
+    <%= collection_select(:teacher, :subject_ids, Subject.ordered, :id, :name, {}, { class: 'form-control', multiple: true, size: 11}) %>
+  </div>
+
+  <div class = 'form-group'>
+    <%= form.label :grade_level_ids %><br>
+    <%= collection_select(:teacher, :grade_level_ids, GradeLevel.ordered, :id, :level, {}, { class: 'form-control', multiple: true, size: 11}) %>
+  </div>
+
+  <div class = 'form-group'>
+    <%= form.label :snils %><br>
+    <%= form.text_field :snils, class: 'form-control' %>
+  </div>
+
+  <div class = 'form-group'>
+    <%= form.submit t('actions.save'), class: 'btn btn-primary'%>
+    <%= link_to t('actions.back'), :back, class: 'btn btn-default' %>
+  </div>
+<% end %>

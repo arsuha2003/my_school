@@ -1,0 +1,35 @@
+<p>
+  <strong><%= User.model_name.human(count: 1) %></strong>
+  <table class="table table-bordered table-hover">
+    <tr>
+      <td class='col-md-2'><%= User.human_attribute_name(:first_name) %></td>
+      <td><%= @user.first_name %></td>
+    </tr>
+    <tr>
+      <td><%= User.human_attribute_name(:last_name) %></td>
+      <td><%= @user.last_name %></td>
+    </tr>
+    <tr>
+      <td><%= User.human_attribute_name(:middle_name) %></td>
+      <td><%= @user.middle_name %></td>
+    </tr>
+    <tr>
+      <td><%= User.human_attribute_name(:email) %></td>
+      <td><%= @user.email %></td>
+    </tr>    
+    <tr>
+      <td><%= User.human_attribute_name(:sex) %></td>
+      <td><%= @user.sex %></td>
+    </tr>
+    <tr>
+      <td><%= User.human_attribute_name(:dob) %></td>
+      <td><%= @user.dob %></td>
+    </tr>    
+  </table>
+
+</p>
+
+<div class="form-group">
+  <%= link_to t('actions.back'), users_path, class: "btn btn-default" %>
+  <%= link_to t('actions.edit'), edit_user_path(@user), class: "btn btn-default" %>
+</div>

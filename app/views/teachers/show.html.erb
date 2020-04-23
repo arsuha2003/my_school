@@ -1,0 +1,31 @@
+<p>
+  <strong><%= Teacher.model_name.human(count: 1) %>:</strong>
+  <table class="table table-bordered table-hover">
+    <tr>
+      <td><%= User.human_attribute_name(:full_name) %></td>
+      <td><%= @teacher.user.full_name %></td>
+    </tr>
+  </table>
+
+</p>
+<p>
+  <strong><%= Subject.model_name.human(count: 2) %>:</strong>
+    <ul>
+    <%  @teacher.subjects.each do |subject| %>
+      <li><%= link_to subject.name, subject %></li>
+    <% end %>
+  </ul>
+</p>
+<p>
+  <strong><%= GradeLevel.model_name.human(count: 2) %>:</strong>
+    <ul>
+    <%  @teacher.grade_levels.each do |grade_level| %>
+      <li><%= link_to grade_level.level, grade_level %></li>
+    <% end %>
+  </ul>
+</p>
+
+<div class="form-group">
+  <%= link_to t('actions.back'), teachers_path, class: "btn btn-default" %>
+  <%= link_to t('actions.edit'), edit_teacher_path(@teacher), class: "btn btn-default" %>
+</div>

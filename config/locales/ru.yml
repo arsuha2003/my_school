@@ -1,0 +1,93 @@
+ru:
+  text: Добро пожаловать в мою школу где вас научат играть в Hearthstone!!!
+  activerecord:
+    attributes:
+      teacher:
+        user_id: Пользователь
+        snils: Снилс
+      grade:
+        letter: Буква
+        name: Название
+        grade_level_id: Уровень класса
+      grade_level:
+        level: Уровень
+        subject_ids: Предметы
+      subject:
+        name: Название
+        grade_level_ids: Классы
+      parent:
+        parent_style: Родственник 
+        student_id: Студенты        
+      student:
+        user_id: Полноe имя
+        grade_id: Класс
+        code: Код
+      user:
+        full_name: Фио
+        first_name: Имя
+        last_name: Фамилия
+        middle_name: Отчество
+        dob: Дата рождения
+        sex: Пол
+        email: Почта
+    models:
+      teacher:
+        one: Учитель
+        few: Учителя   
+      grade_level: 
+        one: Уровень класса
+        few: Уровни классов
+      student: 
+        one: Студент
+        few: Студенты  
+      subject: 
+        one: Предмет
+        few: Предметы  
+      user: 
+        one:  Пользователь 
+        few:  Пользователи        
+      grade:
+        one: Класс
+        few: Классы 
+  actions:
+    back: Назад
+    confirm: Ты УвЕрЕн?
+    create: Создать
+    delete: Удалить
+    edit: Редактировать
+    save: Сохранить это творение   
+    view: Показать
+  app:
+    name: 'Моя школа'
+  home: Домой
+  grade_levels:
+    new:
+      title: Новый уровень класса
+    edit:
+      title: Редактирование данного нам богом уровня
+  teachers:
+    new:
+      title: Новый препод
+    edit:
+      title: Редактирование данного нам богом препода
+  grades:
+    new:
+      title: Новый класс
+    edit:
+      title: Редактирование данного нам богом класса
+  subjects:
+    new:
+      title: Новый Предмет
+    edit:
+      title: Редактирование данного нам богом предмета
+  users:
+    new:
+      title: Новый челик
+    edit:
+      title: Редактирование данного нам богом челика
+  students:
+    new:
+      title: Новый задрот
+    edit:
+      title: Редактирование данного нам богом задрота
+

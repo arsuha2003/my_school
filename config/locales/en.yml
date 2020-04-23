@@ -1,0 +1,99 @@
+en:
+  text: Welcome to my school where you can learn to play Hearthstone!!!
+  activerecord:
+    errors:
+      template:
+        header:
+          one:   "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
+        body:    "There were problems with the following fields:"    
+    attributes:
+      teacher:
+        user_id: User
+        snils: Snils
+        user:      
+      grade:
+        letter: letter
+        name: Name
+        grade_level_id: Grade level
+      grade_level:
+        level: level
+        subject_ids: Subjects
+      parent:
+        parent_style: Relative 
+        student_id: Srudent id     
+      subject:
+        name: Name
+        grade_level_ids: Grades
+      student:
+        user_id: Full name
+        grade_id: Grade
+        code: Code
+      user:
+        full_name: Full name
+        first_name: Name
+        last_name: Last name
+        middle_name: Middle Name
+        dob: Date of birthday
+        sex: Sex
+        email: Email
+    models:
+      teacher:
+        one: Teacher
+        other: Teachers
+      grade:
+        one: Grade
+        other: Grades      
+      grade_level: 
+        one: Grade level
+        other: Grade levels  
+      student: 
+        one: Student
+        other: Students  
+      subject: 
+        one: Subject
+        other: Subjects  
+      user: 
+        one: User
+        other: Users
+  actions:
+    back: To hell
+    confirm: Are you sure?
+    create: Create
+    delete: Delete
+    edit: Edit
+    save: Save this creation
+    view: View
+  app:
+    name: 'My school'
+  home: "Home"
+  teachers:
+    new:
+      title: Create teacher
+    edit:
+      title: Edit teacher
+  grade_levels:
+    new:
+      title: Create grade level
+    edit:
+      title: Edit grade level
+  grades:
+    new:
+      title: Create grade 
+    edit:
+      title: Edit grade 
+  subjects:
+    new:
+      title: Create  subject
+    edit:
+      title: Edit  subject
+  users:
+    new:
+      title: Create user 
+    edit:
+      title: Edit  user
+  students:
+    new:
+      title: Create  student
+    edit:
+      title: Edit  student

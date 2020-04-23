@@ -1,0 +1,25 @@
+<p>
+  <strong><%= GradeLevel.model_name.human(count: 1) %>:</strong>
+  <%= @grade_level.level %>
+</p>
+<p>
+  <strong><%= Subject.model_name.human(count: 2) %>:</strong>
+  <ul>
+    <%  @grade_level.subjects.each do |subject| %>
+      <li><%= link_to subject.name, subject %></li>
+    <% end %>
+  </ul>
+</p>
+<p>
+  <strong><%= Teacher.model_name.human(count: 2) %>:</strong>
+  <ul>
+    <%  @grade_level.teachers.each do |teacher| %>
+      <li><%= link_to teacher.user.full_name, teacher %></li>
+    <% end %>
+  </ul>
+</p>
+<div class="form-group">
+  <%= link_to t('actions.back'), grade_levels_path, class: "btn btn-default" %>
+  <%= link_to t('actions.edit'), edit_grade_level_path(@grade_level), class: "btn btn-default" %>
+</div>
+

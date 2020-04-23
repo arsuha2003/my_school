@@ -1,0 +1,25 @@
+<p>
+  <strong><%= Parent.model_name.human(count: 1) %></strong>
+  <table class="table table-striped table-hover">
+    <tr>
+      <td><%= User.human_attribute_name(:full_name) %></td>
+      <td><%= @parent.user.full_name %></td>
+    </tr> 
+    <tr>
+      <td><%= Parent.human_attribute_name(:parent_style) %></td>
+      <td><%= @parent.parent_style %></td>
+    </tr>     
+  </table>
+</p>
+<p>
+  <strong><%= Student.model_name.human(count: 2) %>:</strong>
+  <ul>
+    <%  @parent.students.each do |student| %>
+      <li><%= link_to student.user.full_name, student %></li>
+    <% end %>
+  </ul>
+</p>
+<div class="form-group">
+  <%= link_to t('actions.back'), parents_path, class: "btn btn-default" %>
+  <%= link_to t('actions.edit'), edit_parent_path(@parent), class: "btn btn-default" %>
+</div>

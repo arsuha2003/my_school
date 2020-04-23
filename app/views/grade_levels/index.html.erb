@@ -1,0 +1,25 @@
+<h1><%= GradeLevel.model_name.human(count: 2) %></h1> 
+<div class="form-group">
+  <%= link_to t('actions.create'), new_grade_level_path, class: "btn btn-primary" %>
+</div>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Id</th>
+    <th><%= GradeLevel.human_attribute_name(:level) %></th>
+    <th><%= Grade.model_name.human(count: 2) %></th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @grade_levels.each do |grade_level| %>
+    <tr>
+      <td><%= grade_level.id %></td>
+      <td><%= grade_level.level %></td>
+      <td><%= link_to grade_level.grades.count, grades_path(grade_level_id: grade_level.id) %></td>
+      <td><%= link_to '', grade_level_path(grade_level), class: "glyphicon glyphicon-eye-open", title: t('actions.view')  %></td>
+      <td><%= link_to '', edit_grade_level_path(grade_level), class: "glyphicon glyphicon-pencil", title: t('actions.edit') %></td>
+      <td><%= link_to '', grade_level_path(grade_level), class: "glyphicon glyphicon-trash", title: t('actions.delete'),
+        method: :delete,
+        data: { confirm: t('actions.confirm') } %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,42 @@
+<%= form_with model: @student, local: true do || %>
+
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@student.errors.count, "error") %> prohibited
+        this student from being saved:
+      </h2>
+      <ul>
+        <% @student.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class = "form-group">
+    <%= form.label :user_id %><br>
+    <%= collection_select(:student, :user_id, User.all, :id, :full_name, {}, { class: 'form-control'}) %>
+  </div>
+
+  <div class = "form-group">
+    <%= form.label :grade_id %><br>
+    <%= collection_select(:student, :grade_id, Grade.all, :id, :name, {}, { class: 'form-control'}) %>
+  </div>
+
+  <div class = "form-group">
+    <%= form.label :code %><br>
+    <%= form.text_field :code, class: "form-control" %>
+  </div>
+
+  <div class = "form-group">
+    <%= form.label :parent_ids %><br>
+    <%= collection_select(:student, :parent_ids, Parent.all, :id, :full_name, {}, { class: 'form-control', multiple: true, size: 11}) %>
+  </div>
+
+  <div class = "form-group">
+    <%= form.submit t('actions.save'), class: "btn btn-primary" %>
+    <%= link_to t('actions.back'), :back, class: "btn btn-default" %>
+  </div>
+
+<% end %>

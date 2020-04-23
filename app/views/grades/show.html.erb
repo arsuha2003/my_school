@@ -1,0 +1,17 @@
+<p>
+  <strong><%= Grade.model_name.human(count: 1) %>:</strong>
+  <table class="table table-bordered table-hover">
+    <tr>
+      <td><%= Grade.human_attribute_name(:level) %></td>
+      <td><%= @grade.grade_level.level %></td>
+    </tr>
+    <tr>
+      <td><%= Grade.human_attribute_name(:letter) %></td>
+      <td><%= @grade.letter %></td>
+    </tr>   
+  </table>
+</p>
+<div class="form-group">
+  <%= link_to t('actions.back'), grades_path, class: "btn btn-default" %>
+  <%= link_to t('actions.edit'), edit_grade_path(@grade), class: "btn btn-default" %>
+</div>
