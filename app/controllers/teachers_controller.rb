@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
-    def index
+  def index
     @teachers = Teacher.all
     if params[:teacher_id]
       @teachers = @teachers.where(teacher_id: params[:teacher_id])
@@ -18,7 +18,7 @@ class TeachersController < ApplicationController
 
   def new
     @teacher = Teacher.new
-    end
+  end
 
   def update
     @teacher = Teacher.find(params[:id])
@@ -50,7 +50,6 @@ class TeachersController < ApplicationController
   private
 
   def teacher_params
-    params.require(:teacher).permit(:snils, :user_id, subject_ids:[], grade_level_ids:[])
+    params.require(:teacher).permit(:snils, :user_id, subject_ids: [], grade_level_ids: [])
   end
-
 end

@@ -16,6 +16,6 @@ module MySchool
     # -- all .rb files in that directory are automatically loaded.
     I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
     config.i18n.default_locale = :ru
-    config.i18n.available_locales = [:en, :ru]
+    config.i18n.available_locales = %i[en ru]
   end
 end

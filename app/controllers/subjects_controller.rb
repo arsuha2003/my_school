@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-    def index
+  def index
     @subjects = Subject.all
   end
 
@@ -13,7 +13,7 @@ class SubjectsController < ApplicationController
 
   def new
     @subject = Subject.new
-    end
+  end
 
   def update
     @subject = Subject.find(params[:id])

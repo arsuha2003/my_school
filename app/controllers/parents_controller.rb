@@ -14,7 +14,7 @@ class ParentsController < ApplicationController
 
   def new
     @parent = Parent.new
-    end
+  end
 
   def update
     @parent = Parent.find(params[:id])
@@ -47,5 +47,5 @@ class ParentsController < ApplicationController
 
   def parent_params
     params.require(:parent).permit(:parent_style, :user_id, student_ids: [])
-  end    
+  end
 end

@@ -1,5 +1,5 @@
 class GradeLevelsController < ApplicationController
-	def index
+  def index
     @grade_levels = GradeLevel.all
   end
 
@@ -13,7 +13,7 @@ class GradeLevelsController < ApplicationController
 
   def new
     @grade_level = GradeLevel.new
-	end
+  end
 
   def update
     @grade_level = GradeLevel.find(params[:id])
@@ -45,6 +45,6 @@ class GradeLevelsController < ApplicationController
   private
 
   def grade_level_params
-    params.require(:grade_level).permit(:level, subject_ids: [],teacher_ids:[])
+    params.require(:grade_level).permit(:level, subject_ids: [], teacher_ids: [])
   end
 end

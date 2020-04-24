@@ -7,5 +7,5 @@ class Teacher < ApplicationRecord
 
   delegate :full_name, :short_name, to: :user
 
-  scope :ordered, -> { order(:snils) }   
+  scope :ordered, -> { order(:snils) }
 end

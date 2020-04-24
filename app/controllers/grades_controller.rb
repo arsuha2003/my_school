@@ -1,6 +1,6 @@
 class GradesController < ApplicationController
-  before_filter :authenticate_user!, except => [:show, :index]
-    def index
+  before_filter :authenticate_user!, except => %i[show index]
+  def index
     @grades = Grade.all
     if params[:grade_level_id]
       @grades = @grades.where(grade_level_id: params[:grade_level_id])
@@ -19,7 +19,7 @@ class GradesController < ApplicationController
 
   def new
     @grade = Grade.new
-    end
+  end
 
   def update
     @grade = Grade.find(params[:id])

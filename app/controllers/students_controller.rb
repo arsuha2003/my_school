@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
-    end
+  end
 
   def update
     @student = Student.find(params[:id])
@@ -47,5 +47,5 @@ class StudentsController < ApplicationController
 
   def student_params
     params.require(:student).permit(:code, :grade_id, :user_id, parent_ids: [])
-  end    
+  end
 end

@@ -4,5 +4,5 @@ class Subject < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true
 
-  scope :ordered, -> { order(:name) }  
+  scope :ordered, -> { order(:name) }
 end
